@@ -1,16 +1,21 @@
 .contact-container{
-    height: 80vh;
+    padding: 4rem;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(250, 250, 250,0.5);
+    background-color: rgb(250, 250, 250);
     color: rgb(250, 250, 250);
   }
   .contact-container h2{
-    font-family: 'Play', sans-serif;
+    color: #fafafa; 
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     line-height: 2rem;
-    padding: 1rem;
+    padding: 2rem 0;
+  }
+  .contact-body{
+    background-image: url(../images/pexels-martin-lopez-2314308.jpg);
   }
   .contact-form{
     padding: 1rem;
@@ -19,55 +24,68 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 50%;
-    line-height: 2rem;
-    border: 1px solid #333;
-    border-left: 1.2rem solid #40826d;
-    border-radius: 1.2rem;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    width: 70%;
+    background: #ddd;
+    line-height: 3rem;
+    
+    border-radius: 0.25rem;
+    box-shadow: 0px 8px 15px rgba(100, 100, 100, 0.4);
   }
   .contact-form input{
     outline: none;
-    color: #40826d;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
     background-color: inherit;
     width: 80%;
-    height: 1.4rem;
     position: relative;
     border: none;
-    border-bottom:2px solid black ;
+    border-bottom:3px solid #333 ;
   }
   .contact-form label{
-    color: #40826d;
+    color: #333;
+    font-size: 1.2rem;
     font-weight: 600;
     font-family: "Play", sans-serif;
   }
   .contact-form textarea{
     outline: none;
     border: none;
-    border-bottom: 2px solid #333;
-    background-color: #fff;
-    width: 100%;
+    color: #111;
+    font-size: 1.1rem;
+    border-bottom: 3px solid #111;
+    background-color: transparent;
+    width: 80%;
     height: 3rem;
-    position: relative;
   }
   .contact-form button[type="submit"]{
     align-self: center;
-    margin: 0.85rem;
+    margin: 1.5rem;
     padding: 0.4rem 1.8rem;
     border: none;
     cursor: pointer;
-    color: #fff;
+    color: #111;
     transition: all ease-in-out 0.4s;
-    background-color: #40826d;
+    background-color: rgb(#fff);
+    border: 3px solid #ddd;
     font-weight: 600;
+    border-radius: 0.5rem;
   }
   .contact-form button[type="submit"]:hover{
-    background-color: hsl(161, 34%, 88%);
-    color: #40826d;
+    background-color: hsl(0, 0%, 63%);
+    color: #111;
+    
   }
   .contact-form input::placeholder{
-    color: rgb(250, 250, 250);
+    color: #333;
   }
   .contact-form textarea::placeholder{
     color: #333;
+  }
+  @media(max-width:1024px){
+    .contact-form{
+      width: 85vw;
+    }
   }

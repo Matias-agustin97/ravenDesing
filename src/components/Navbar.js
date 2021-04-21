@@ -1,14 +1,31 @@
 import { Link } from 'gatsby'
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 
 export default function Navbar() {
-
+        
         const [navlinks,setNavlinks]=useState(false)
+      
+        const [scrollWindowY, setScrollWindowY] = useState(window.scrollY)
+        const [partialNav, setPartialNav] = useState(false)
+    
+        // navshadow on scroll
+        const activeNavbar=()=>{
+            setScrollWindowY((prev)=> window.scrollY)
+            scrollWindowY>80 ? setPartialNav(true) : setPartialNav(false);
+        }
+        useEffect(() => {
+            window.addEventListener('scroll',activeNavbar)
+            return () => {
+                window.removeEventListener('scroll',activeNavbar)
+            }
+        },)
+        
+         
 
 
 
     return (
-        <header>
+        <header className={partialNav ?`activescroll`:'unactivescroll'} >
    
     <ul className={`${navlinks ? 'navlinks navlink-active':'navlinks'}`} >
         <li><Link to='/'className={`${navlinks ? 'anchor-active':'s'}`}>Home</Link></li>
